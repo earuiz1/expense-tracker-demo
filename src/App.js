@@ -1,5 +1,7 @@
 import React from 'react'
-import ExpenseItem from './components/ExpenseItem'
+// import ExpenseItem from './components/ExpenseItem'
+import Expenses from './components/Expenses'
+
 function App() {
 
 /* Creating an array of objects. */
@@ -32,10 +34,8 @@ function App() {
   return (
     <div>
       <h2>Expense Tracker Tutorial (React) </h2>
-      <ExpenseItem title={dummy_expenses[0].title} amount={dummy_expenses[0].amount} date={dummy_expenses[0].date}></ExpenseItem>
-      <ExpenseItem title={dummy_expenses[1].title} amount={dummy_expenses[1].amount} date={dummy_expenses[1].date}></ExpenseItem>
-      <ExpenseItem title={dummy_expenses[2].title} amount={dummy_expenses[2].amount} date={dummy_expenses[2].date}></ExpenseItem>
-      <ExpenseItem title={dummy_expenses[3].title} amount={dummy_expenses[3].amount} date={dummy_expenses[3].date}></ExpenseItem>
+      {/* To make this file more readable, create a new file and use ExpenseItem.js there. */}
+      <Expenses expense_array = {dummy_expenses}></Expenses>
     </div>
   );
 }
