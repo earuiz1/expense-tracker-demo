@@ -1,12 +1,18 @@
 import React, {useState} from "react";
 import './NewExpenseForm.css'
 
-function NewExpenseForm() {
+function NewExpenseForm(props) {
 
     //Create states for new title, amount and date 
     const [newTitle, setNewTitle] = useState('');
     const [newAmount, setNewAmount] = useState('');
     const [newDate, setNewDate] = useState('');
+
+  /**
+   * The above function is a function that takes in an event as a parameter and then sets the new
+   * title, amount, and date to the value of the event target
+   * @param event - The event that triggered the function
+   */
 
     const titleHandler = (event) => {
         //console.log(event.target.value);
@@ -47,6 +53,9 @@ function NewExpenseForm() {
         setNewTitle('');
         setNewAmount('');
         setNewDate('');
+
+        //Pass the value up to the NewExpense.js
+        props.onFormDataSave(formData);
 
     }
 
