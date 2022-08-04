@@ -1,6 +1,7 @@
 import React from 'react'
 // import ExpenseItem from './components/ExpenseItem'
 import Expenses from './components/Expenses'
+import NewExpense from './components/NewExpense/NewExpense'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
   return (
     <div>
       <h2>Expense Tracker Tutorial (React) </h2>
+      <NewExpense></NewExpense>
       {/* To make this file more readable, create a new file and use ExpenseItem.js there. */}
       <Expenses expense_array = {dummy_expenses}></Expenses>
     </div>
