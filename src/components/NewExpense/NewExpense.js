@@ -3,8 +3,8 @@ import NewExpenseForm from './NewExpenseForm'
 import { v4 as uuid } from 'uuid';
 import './NewExpense.css'
 
-function NewExpense() {
-    
+function NewExpense(props) {
+
 const formDataHandler = (submittedFormData) => {
     
     //Create a new object to store data coming from NewExpenseForm.js and add new id field
@@ -14,6 +14,8 @@ const formDataHandler = (submittedFormData) => {
     }
 
     console.log('In NewExpense.js', formData);
+
+    props.onSaveData(formData);
 }
   return (
     <div className="new-expense">

@@ -13,15 +13,19 @@ function Expenses(props) {
     //Store data coming from NewExpenseFilter.js
     setFilterYear(filteredYear);
   };
+
+  //Filter the array (check if the year selected is the same as the expense's year)
+  const filteredArray = props.expense_array
+  .filter((item) => item.date.getFullYear().toString() === filterYear);
+
   return (
     <div className="expenses-card">
       <ExpenseFilter
         onSaveFilter={filterHandler}
         defaultYear={filterYear}
       ></ExpenseFilter>
-      {props.expense_array
-        .filter((item) => item.date.getFullYear().toString() === filterYear)
-        .map((item) => (
+      {filteredArray.length === 0 && <h3>No Expenses </h3> }
+        {filteredArray.length > 0 && filteredArray.map((item) => (
           <ExpenseItem
             key = {item.id}
             title={item.title}
